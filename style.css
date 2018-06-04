@@ -1,0 +1,14 @@
+body{
+  margin-right:auto;
+  width: 1124px;
+  min-height: 2020px;
+}
+.items{
+    display: flex;
+    width: 1124px;
+    flex-wrap: wrap;
+    margin:auto;
+}
+.store{
+    margin-left: 10px;
+}
