@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang = "ru">
+  <head>
+   <meta charset="utf-8"   name="viewport" content="width=device-width, initial-scale=1">
+   <title> Site name</title>
+    <style>
+        * { padding: 0; margin: 0; }
+    	canvas { background: #eee; display: block; margin: 0 auto; }
+        #wrapper {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #content {
+            z-index: 10;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+       }
+        div img{
+            padding: 0;
+            margin-top: 0;
+            height: auto;
+            background-color: #676d89;
+        }
+    </style>
+  </head>
+  <body onload="myFunction()">
+    <main style="display:none" id="mainText">
+            <div id = "wrapper">
+                <canvas id="grid" width="480" height="320"></canvas>
+                <div id="content">
+                    trololo
+                </div>
+            </div>
+        
+    </main>
+    <div class ="preloader-container" id="myPreloader">
+        <img src="https://cdn.dribbble.com/users/8106/screenshots/1297289/sp_loader.gif" width="100%" height="auto">
+    </div>
+    <script>
+       
+        var wrapper = document.getElementById('wrapper');
+        var canvas = document.getElementById('grid');
+        var context = canvas.getContext('2d');
+        var step = 100;
+        function myFunction() {
+           var myVar = setTimeout(showPage, 1000);
+            }
+        function showPage() {
+            document.getElementById("myPreloader").style.display = "none";
+            document.getElementById("mainText").style.display = "block";
+            }
+        canvas.height = wrapper.offsetHeight;
+        canvas.width = wrapper.offsetWidth;
+        context.strokeStyle = '#000';
+        for (var i = 0; i < canvas.width; i += step) {
+        context.moveTo(i, 0);
+        context.lineTo(i, canvas.height);
+        context.stroke();
+           }
+
+       for (var i = 0; i < canvas.height; i += step) {
+        context.moveTo(0, i);
+        context.lineTo(canvas.width, i);
+        context.stroke();
+          }
+    </script>
+  </body>
+</html>
